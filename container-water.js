@@ -25,7 +25,7 @@ function max_water(arr){
   let area = 0;
   for(let height = 0; height < arr.length; height += 1){
     let curr = arr[height];
-    for(let width = height + 1; width < arr.length; width += 1){
+    for(let width = arr.length; width > height; width -= 1){
       let newArea = Math.min(curr, arr[width]) * (width - height);
       if(area < newArea){
         area = newArea;
