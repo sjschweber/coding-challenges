@@ -1,0 +1,14 @@
+{
+  "name": "coding-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "group-anagrams.js",
+  "scripts": {
+    "test": "mocha container-water.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^9.1.0"
+  }
+}
