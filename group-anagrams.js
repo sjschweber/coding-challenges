@@ -8,6 +8,9 @@ describe("group_anagrams", () => {
     assert.deepEqual(group_anagrams(["nat", "tin"]), [["nat"], ["tin"]])
     assert.deepEqual(group_anagrams(["nat", "tin", "nit"]), [["nat"], ["tin", "nit"]])
     assert.deepEqual(group_anagrams(["nat", "tin", "nit", "tan", "ant"]), [["nat", "tan", "ant"], ["tin", "nit"]])
+    assert.deepEqual(group_anagrams(
+      ["ddddddddddg","dgggggggggg"]),
+      [["ddddddddddg"],["dgggggggggg"]])
   })
   it('should return three groups of anagrams from a list of three different anagrams', () => {
     assert.deepEqual(group_anagrams(["eat","tea","tan","ate","nat","bat"]), [["eat","tea", "ate"], ["tan", "nat"], ["bat"]]);
@@ -36,6 +39,7 @@ function group_anagrams(list){
             : letterCountOfStr2[str2.charAt(k)] = 1;
 
           }
+
           if(isEqual(letterCountOfStr, letterCountOfStr2)){
             anagramGroup.push(str2)
             list[j] = -1;
@@ -49,11 +53,10 @@ function group_anagrams(list){
 }
 
 function isEqual(obj1, obj2){
-  for(let item in obj1){
-    if(obj2[item] === undefined || obj2[item] < 1){
+
+  for(const item in obj1){
+    if(obj2[item] === undefined || obj1[item] != obj2[item]){
       return false;
-    } else {
-      obj2[item] -= 1;
     }
   }
   return true;

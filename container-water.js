@@ -22,10 +22,18 @@ describe('max_water', () => {
 })
 
 function max_water(arr){
+  let map = new Map();
   let area = 0;
   for(let height = 0; height < arr.length; height += 1){
     let curr = arr[height];
-    for(let width = arr.length; width > height; width -= 1){
+    for(let width = arr.length - 1; width > height; width -= 1){
+      if(arr[width] >= curr){
+        let newArea = Math.min(curr, arr[width]) * (width - height);
+        if(area < newArea){
+          area = newArea;
+        }
+        break;
+      }
       let newArea = Math.min(curr, arr[width]) * (width - height);
       if(area < newArea){
         area = newArea;

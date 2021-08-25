@@ -4,7 +4,7 @@
   "description": "",
   "main": "group-anagrams.js",
   "scripts": {
-    "test": "mocha container-water.js"
+    "test": "mocha group-anagrams.js"
   },
   "author": "",
   "license": "ISC",
