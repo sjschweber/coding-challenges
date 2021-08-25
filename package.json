@@ -4,7 +4,7 @@
   "description": "",
   "main": "group-anagrams.js",
   "scripts": {
-    "test": "mocha group-anagrams.js"
+    "test": "mocha climbing-stairs.js"
   },
   "author": "",
   "license": "ISC",
